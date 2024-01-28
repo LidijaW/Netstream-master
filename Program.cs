@@ -16,6 +16,10 @@ namespace Netstream
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            databaseConnector.TestConnection();
+
             Application.Run(new Login());
         }
     }
