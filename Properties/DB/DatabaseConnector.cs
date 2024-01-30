@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace Netstream
+namespace Netstream.Properties.DB
 {
     public class DatabaseConnector
     {

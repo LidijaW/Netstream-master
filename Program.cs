@@ -17,7 +17,7 @@ namespace Netstream
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DatabaseConnector databaseConnector = new DatabaseConnector();
+            Netstream.Properties.DB.DatabaseConnector databaseConnector = new Netstream.Properties.DB.DatabaseConnector();
             databaseConnector.TestConnection();
 
             Application.Run(new Login());
