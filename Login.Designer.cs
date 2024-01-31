@@ -141,7 +141,7 @@
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Login Netstream";
             this.ResumeLayout(false);
             this.PerformLayout();
 

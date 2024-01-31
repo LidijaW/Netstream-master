@@ -40,6 +40,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -150,6 +151,17 @@
             this.textBox4.Size = new System.Drawing.Size(239, 22);
             this.textBox4.TabIndex = 21;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.PeachPuff;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(450, 526);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(239, 50);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Registrirajte se";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // Registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +169,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1063, 641);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -170,7 +183,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "Registracija";
-            this.Text = "Registracija";
+            this.Text = "Registracija Netstream";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +202,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button2;
     }
 }
