@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Netstream.Properties.Model
 {
-    
+    [Table("razina")] 
     public class Razina
     {
         [Key]
-        public int ID { get; set; }
+        [Column("ID")] 
+        public int Id { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -16,5 +17,4 @@ namespace Netstream.Properties.Model
 
         public virtual ICollection<Korisnik> Korisnici { get; set; }
     }
-
 }

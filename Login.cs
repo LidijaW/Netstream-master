@@ -8,17 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Netstream.Properties.DB;
+using Netstream.Properties.Model;
 using MySql.Data.MySqlClient;
+using System.Data.Common;
 
 namespace Netstream
 {
     public partial class Login : Form
     {
-        private DatabaseConnector databaseConnector;
+        private readonly DatabaseConnector databaseConnector;
+
         public Login()
         {
             InitializeComponent();
-            databaseConnector = new DatabaseConnector();
+            string connectionString = "Server=localhost;Database=netstream;Uid=luka;Pwd=luka;";
+            databaseConnector = new DatabaseConnector(connectionString);
         }
 
         private void textBoxPassword_Click(object sender, EventArgs e)
@@ -33,26 +37,29 @@ namespace Netstream
 
         private void login(object sender, EventArgs e)
         {
-            if (!IsDatabaseConnected())
+            if (!TestDatabaseConnection())
             {
-                MessageBox.Show("Failed to connect to the database. Please check your database settings.");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxPassword.Text))
-            {
-                MessageBox.Show("Please fill in both email and password.");
+                MessageBox.Show("Database connection failed. Unable to login.");
                 return;
             }
 
             string email = textBoxEmail.Text;
             string password = textBoxPassword.Text;
 
-            bool isAuthenticated = AuthenticateUser(email, password);
+            bool isAuthenticated = databaseConnector.AuthenticateUser(email, password);
 
             if (isAuthenticated)
             {
-                MessageBox.Show("Login successful!");
+                Korisnik user = databaseConnector.GetUserByEmail(email);
+                if (user != null)
+                {
+                    // Proceed with user login
+                    MessageBox.Show($"Login successful! Welcome, {user.Email}!");
+                }
+                else
+                {
+                    MessageBox.Show("An error occurred while retrieving user information.");
+                }
             }
             else
             {
@@ -60,52 +67,24 @@ namespace Netstream
             }
         }
 
-        private bool IsDatabaseConnected()
+        private void registracija(object sender, EventArgs e)
+        {
+            Registracija registracijaForm = new Registracija();
+            registracijaForm.ShowDialog();
+        }
+
+        private bool TestDatabaseConnection()
         {
             try
             {
                 databaseConnector.TestConnection();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error testing database connection: {ex.Message}");
                 return false;
             }
-        }
-
-        private bool AuthenticateUser(string email, string password)
-        {
-            bool isAuthenticated = false;
-            string connectionString = databaseConnector.GetConnectionString();
-
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                string query = "SELECT COUNT(*) FROM korisnik WHERE Email = @Email AND Password = @Password";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Password", password);
-
-                try
-                {
-                    connection.Open();
-                    int count = (int)command.ExecuteScalar();
-
-                    isAuthenticated = count > 0;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while querying the database: {ex.Message}");
-                }
-            }
-
-            return isAuthenticated;
-        }
-
-
-        private void registracija(object sender, EventArgs e)
-        {
-            Registracija registracijaForm = new Registracija();
-            registracijaForm.ShowDialog();
         }
     }
 }

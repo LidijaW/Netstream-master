@@ -3,10 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Netstream.Properties.Model
 {
+    [Table("video")] 
     public class Video
     {
         [Key]
-        public int ID { get; set; }
+        [Column("ID")] 
+        public int Id { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -33,9 +35,15 @@ namespace Netstream.Properties.Model
 
         public TipVideo Tip { get; set; }
 
-        public int Kategorija_ID { get; set; }
+        [ForeignKey("Kategorija")]
+        public int KategorijaId { get; set; } 
 
-        [ForeignKey("Kategorija_ID")]
         public virtual Kategorija Kategorija { get; set; }
+    }
+
+    public enum TipVideo
+    {
+        Film,
+        Serija
     }
 }

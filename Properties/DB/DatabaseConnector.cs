@@ -1,26 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Netstream.Properties.Model;
 
 namespace Netstream.Properties.DB
 {
     public class DatabaseConnector
     {
-        public string GetConnectionString()
+        private readonly string connectionString;
+
+        public DatabaseConnector(string connectionString)
         {
-            string connString = "Server=localhost;Database=netstream;Uid=luka;Pwd=luka;";
-            return connString;
+            this.connectionString = connectionString;
         }
 
         public void TestConnection()
         {
-            string connectionString = GetConnectionString();
-
             using (var connection = new MySqlConnection(connectionString))
             {
                 try
@@ -31,18 +26,69 @@ namespace Netstream.Properties.DB
                 catch (Exception ex)
                 {
                     Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
-                }
-                finally
-                {
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        connection.Close();
-                        Console.WriteLine("Connection closed.");
-                    }
+                    throw; // Rethrow the exception to be handled in the Login form
                 }
             }
         }
 
-    }
+        public bool AuthenticateUser(string email, string password)
+        {
+            bool isAuthenticated = false;
 
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM korisnik WHERE Email = @Email AND Lozinka = @Password";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@Password", password);
+
+                try
+                {
+                    connection.Open();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    isAuthenticated = count > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An error occurred while authenticating user: {ex.Message}");
+                }
+            }
+
+            return isAuthenticated;
+        }
+
+        public Korisnik GetUserByEmail(string email)
+        {
+            Korisnik user = null;
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM korisnik WHERE Email = @Email";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Email", email);
+
+                try
+                {
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = new Korisnik
+                            {
+                                Id = Convert.ToInt32(reader["Id"]),
+                                Email = reader["Email"].ToString(),
+                            };
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An error occurred while retrieving user information: {ex.Message}");
+                }
+            }
+
+            return user;
+        }
+    }
 }
