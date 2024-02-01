@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Netstream.Properties.DB
 {
     public class DatabaseConnector
     {
-        private string GetConnectionString()
+        public string GetConnectionString()
         {
             string connString = "Server=localhost;Database=netstream;Uid=luka;Pwd=luka;";
             return connString;
@@ -25,14 +26,23 @@ namespace Netstream.Properties.DB
                 try
                 {
                     connection.Open();
-                    Console.WriteLine("Uspješno ste se spojili na bazu podataka!");
+                    Console.WriteLine("Successfully connected to the database!");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Došlo je do greške prilikom pokušaja spajanja na bazu podataka: {ex.Message}");
+                    Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                        Console.WriteLine("Connection closed.");
+                    }
                 }
             }
         }
+
     }
 
 }
