@@ -53,8 +53,10 @@ namespace Netstream
                 Korisnik user = databaseConnector.GetUserByEmail(email);
                 if (user != null)
                 {
-                    // Proceed with user login
                     MessageBox.Show($"Login successful! Welcome, {user.Email}!");
+                    Homepage homepageForm = new Homepage();
+                    homepageForm.Show();
+                    this.Hide();
                 }
                 else
                 {

@@ -1,6 +1,6 @@
 ﻿namespace Netstream
 {
-    partial class Search
+    partial class Homepage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
             this.button1home = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -88,7 +88,7 @@
             this.panel1.Size = new System.Drawing.Size(1164, 675);
             this.panel1.TabIndex = 4;
             // 
-            // Search
+            // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +100,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button1home);
             this.ForeColor = System.Drawing.Color.RosyBrown;
-            this.Name = "Search";
+            this.Name = "Homepage";
             this.Text = "Homepage Netstream";
             this.ResumeLayout(false);
 

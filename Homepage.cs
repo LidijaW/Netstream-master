@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Netstream
 {
-    public partial class Search : Form
+    public partial class Homepage : Form
     {
-        public Search()
+        public Homepage()
         {
             InitializeComponent();
         }
