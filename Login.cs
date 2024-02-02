@@ -21,7 +21,7 @@ namespace Netstream
         public Login()
         {
             InitializeComponent();
-            string connectionString = "Server=localhost;Database=netstream;Uid=luka;Pwd=luka;";
+            string connectionString = "Server=localhost;Database=netstream;Uid=root;Pwd=root;";
             databaseConnector = new DatabaseConnector(connectionString);
         }
 
@@ -53,19 +53,19 @@ namespace Netstream
                 Korisnik user = databaseConnector.GetUserByEmail(email);
                 if (user != null)
                 {
-                    MessageBox.Show($"Login successful! Welcome, {user.Email}!");
+                    MessageBox.Show($"Uspješno ste se prijavili! Dobrošli, {user.Email}!");
                     Homepage homepageForm = new Homepage();
                     homepageForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("An error occurred while retrieving user information.");
+                    MessageBox.Show("Došlo je do pogreške prilikom dohvaćanja korisničkih informacija.");
                 }
             }
             else
             {
-                MessageBox.Show("Incorrect email or password.");
+                MessageBox.Show("Netočan email ili lozinka.");
             }
         }
 

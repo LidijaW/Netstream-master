@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Netstream
 {
-    public partial class Search : Form
+    public partial class Form1 : Form
     {
-        public Search()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

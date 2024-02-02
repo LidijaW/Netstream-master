@@ -16,5 +16,18 @@ namespace Netstream
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Stvaranje instance nove forme
+            Search searchForm = new Search();
+
+            // Prikazivanje nove forme
+            searchForm.Show();
+
+            // Zatvaranje trenutne forme (opcionalno, ovisno o vašim potrebama)
+            this.Hide();
+        }
+
     }
 }
