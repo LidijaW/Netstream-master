@@ -17,12 +17,13 @@ namespace Netstream
     public partial class Login : Form
     {
         private readonly DatabaseConnector databaseConnector;
+        private string connectionString;
 
         public Login()
         {
             InitializeComponent();
-            string connectionString = "Server=localhost;Database=netstream;Uid=luka;Pwd=luka;";
-            databaseConnector = new DatabaseConnector(connectionString);
+            connectionString = $"Server={DatabaseConstants.Server};Database={DatabaseConstants.Database};Uid={DatabaseConstants.Uid};Pwd={DatabaseConstants.Pwd};";
+            databaseConnector = new DatabaseConnector(DatabaseConstants.Server, DatabaseConstants.Database, DatabaseConstants.Uid, DatabaseConstants.Pwd);
         }
 
         private void textBoxPassword_Click(object sender, EventArgs e)

@@ -19,8 +19,8 @@ namespace Netstream
         public Registracija()
         {
             InitializeComponent();
-            connectionString = "Server=localhost;Database=netstream;Uid=luka;Pwd=luka;";
-            databaseConnector = new DatabaseConnector(connectionString);
+            connectionString = $"Server={DatabaseConstants.Server};Database={DatabaseConstants.Database};Uid={DatabaseConstants.Uid};Pwd={DatabaseConstants.Pwd};";
+            databaseConnector = new DatabaseConnector(DatabaseConstants.Server, DatabaseConstants.Database, DatabaseConstants.Uid, DatabaseConstants.Pwd);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -98,7 +98,6 @@ namespace Netstream
 
                     int rowsAffected = command.ExecuteNonQuery();
 
-                   
                     return rowsAffected > 0;
                 }
             }
@@ -108,6 +107,7 @@ namespace Netstream
                 return false;
             }
         }
+
 
 
         private void label7_Click(object sender, EventArgs e)

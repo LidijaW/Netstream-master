@@ -9,9 +9,9 @@ namespace Netstream.Properties.DB
     {
         private readonly string connectionString;
 
-        public DatabaseConnector(string connectionString)
+        public DatabaseConnector(string server, string database, string uid, string pwd)
         {
-            this.connectionString = connectionString;
+            connectionString = $"Server={server};Database={database};Uid={uid};Pwd={pwd};";
         }
 
         public void TestConnection()

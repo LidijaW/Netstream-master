@@ -130,6 +130,7 @@
     <Compile Include="Korisnik.Designer.cs">
       <DependentUpon>Korisnik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\DB\DatabaseConstants.cs" />
     <Compile Include="Properties\DB\NetstreamContext.cs" />
     <Compile Include="Search.cs">
       <SubType>Form</SubType>
