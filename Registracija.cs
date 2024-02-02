@@ -86,8 +86,8 @@ namespace Netstream
                     object maxIdResult = maxIdCommand.ExecuteScalar();
                     int newId = (maxIdResult == DBNull.Value) ? 1 : Convert.ToInt32(maxIdResult) + 1;
 
-                    string query = "INSERT INTO korisnik (id, ime, prezime, email, lozinka, Korisnicko_ime) " +
-                                   "VALUES (@Id, @Ime, @Prezime, @Email, @Lozinka, @KorisnickoIme)";
+                    string query = "INSERT INTO korisnik (id, ime, prezime, email, lozinka, Korisnicko_ime, Aktivan, Razina_ID) " +
+                                   "VALUES (@Id, @Ime, @Prezime, @Email, @Lozinka, @KorisnickoIme, @Aktivan, @RazinaID)";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Id", newId);
                     command.Parameters.AddWithValue("@Ime", ime);
@@ -95,6 +95,8 @@ namespace Netstream
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Lozinka", lozinka);
                     command.Parameters.AddWithValue("@KorisnickoIme", korisnickoIme);
+                    command.Parameters.AddWithValue("@Aktivan", 1); // Postavljamo Aktivan = 1
+                    command.Parameters.AddWithValue("@RazinaID", 2); // Postavljamo Razina_ID = 2
 
                     int rowsAffected = command.ExecuteNonQuery();
 
@@ -103,10 +105,11 @@ namespace Netstream
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error prilikom spremanja na databazu: {ex.Message}");
+                MessageBox.Show($"Greška prilikom spremanja u bazu podataka: {ex.Message}");
                 return false;
             }
         }
+
 
 
 

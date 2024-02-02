@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Netstream.Properties.Model
 {
-    [Table("korisnik")] 
+    [Table("korisnik")]
     public class Korisnik
     {
         [Key]
-        [Column("ID")] 
+        [Column("ID")]
         public int Id { get; set; }
 
         [Required]
@@ -21,7 +21,8 @@ namespace Netstream.Properties.Model
 
         [Required]
         [StringLength(255)]
-        public string KorisnickoIme { get; set; } 
+        [Column("Korisnicko_ime")]
+        public string KorisnickoIme { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -34,7 +35,8 @@ namespace Netstream.Properties.Model
         public bool Aktivan { get; set; }
 
         [ForeignKey("Razina")]
-        public int RazinaId { get; set; } 
+        [Column("Razina_ID")]
+        public int RazinaId { get; set; }
 
         public virtual Razina Razina { get; set; }
     }
