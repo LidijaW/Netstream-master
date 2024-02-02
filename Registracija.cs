@@ -45,9 +45,13 @@ namespace Netstream
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxIme.Text) || string.IsNullOrEmpty(textBoxPrezime.Text) || string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxLozinka.Text))
+            if (string.IsNullOrEmpty(textBoxIme.Text) ||
+                string.IsNullOrEmpty(textBoxPrezime.Text) ||
+                string.IsNullOrEmpty(textBoxEmail.Text) ||
+                string.IsNullOrEmpty(textBoxLozinka.Text) ||
+                string.IsNullOrEmpty(textBoxUsername.Text))
             {
-                MessageBox.Show("Popunite sva polja.");
+                MessageBox.Show("Please fill in all fields.");
                 return;
             }
 
@@ -55,8 +59,10 @@ namespace Netstream
             string prezime = textBoxPrezime.Text;
             string email = textBoxEmail.Text;
             string lozinka = textBoxLozinka.Text;
+            string korisnickoIme = textBoxUsername.Text;
 
-            bool success = SaveUserDataToDatabase(ime, prezime, email, lozinka);
+            bool success = SaveUserDataToDatabase(ime, prezime, email, lozinka, korisnickoIme);
+
 
             if (success)
             {
@@ -68,7 +74,7 @@ namespace Netstream
             }
         }
 
-        private bool SaveUserDataToDatabase(string ime, string prezime, string email, string lozinka)
+        private bool SaveUserDataToDatabase(string ime, string prezime, string email, string lozinka, string korisnickoIme)
         {
             try
             {
@@ -80,23 +86,33 @@ namespace Netstream
                     object maxIdResult = maxIdCommand.ExecuteScalar();
                     int newId = (maxIdResult == DBNull.Value) ? 1 : Convert.ToInt32(maxIdResult) + 1;
 
-                    string query = "INSERT INTO korisnik (id, ime, prezime, email, lozinka) VALUES (@Id, @Ime, @Prezime, @Email, @Lozinka)";
+                    string query = "INSERT INTO korisnik (id, ime, prezime, email, lozinka, Korisnicko_ime) " +
+                                   "VALUES (@Id, @Ime, @Prezime, @Email, @Lozinka, @KorisnickoIme)";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Id", newId);
                     command.Parameters.AddWithValue("@Ime", ime);
                     command.Parameters.AddWithValue("@Prezime", prezime);
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Lozinka", lozinka);
+                    command.Parameters.AddWithValue("@KorisnickoIme", korisnickoIme);
 
                     int rowsAffected = command.ExecuteNonQuery();
+
+                   
                     return rowsAffected > 0;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error prilikom povezivanja na databazu: {ex.Message}");
+                MessageBox.Show($"Error prilikom spremanja na databazu: {ex.Message}");
                 return false;
             }
+        }
+
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

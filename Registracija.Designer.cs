@@ -41,6 +41,8 @@
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxLozinka = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -163,6 +165,25 @@
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(290, 240);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 20);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Username :";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.Location = new System.Drawing.Point(450, 240);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(239, 22);
+            this.textBoxUsername.TabIndex = 24;
+            // 
             // Registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +191,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1063, 641);
+            this.Controls.Add(this.textBoxUsername);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.textBoxLozinka);
             this.Controls.Add(this.textBoxEmail);
@@ -204,5 +227,7 @@
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxLozinka;
         private System.Windows.Forms.Button buttonRegister;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxUsername;
     }
 }
