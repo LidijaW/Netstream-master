@@ -26,7 +26,7 @@ namespace Netstream.Properties.DB
                 catch (Exception ex)
                 {
                     Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
-                    throw; // Rethrow the exception to be handled in the Login form
+                    throw; 
                 }
             }
         }
@@ -37,10 +37,10 @@ namespace Netstream.Properties.DB
 
             using (var connection = new MySqlConnection(connectionString))
             {
-                string query = "SELECT COUNT(*) FROM korisnik WHERE Email = @Email AND Lozinka = @Password";
+                string query = "SELECT COUNT(*) FROM korisnik WHERE Email = @Email AND Lozinka = @Lozinka";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Lozinka", password); 
 
                 try
                 {
@@ -56,6 +56,7 @@ namespace Netstream.Properties.DB
 
             return isAuthenticated;
         }
+
 
         public Korisnik GetUserByEmail(string email)
         {
