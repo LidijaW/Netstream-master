@@ -21,7 +21,7 @@ namespace Netstream
         public Login()
         {
             InitializeComponent();
-            string connectionString = "Server=localhost;Database=netstream;Uid=root;Pwd=root;";
+            string connectionString = "Server=localhost;Database=netstream;Uid=luka;Pwd=luka;";
             databaseConnector = new DatabaseConnector(connectionString);
         }
 
@@ -39,7 +39,7 @@ namespace Netstream
         {
             if (!TestDatabaseConnection())
             {
-                MessageBox.Show("Database connection failed. Unable to login.");
+                MessageBox.Show("Neuspjelo spajanje na databazu.");
                 return;
             }
 
