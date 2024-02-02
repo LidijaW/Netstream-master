@@ -84,7 +84,7 @@ namespace Netstream
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error testing database connection: {ex.Message}");
+                Console.WriteLine($"Greška u testiranju povezivanja na bazu podataka: {ex.Message}");
                 return false;
             }
         }

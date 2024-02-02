@@ -26,5 +26,32 @@ namespace Netstream
         {
 
         }
+
+        private void button1home_Click(object sender, EventArgs e)
+        {
+            Homepage homepageForm = new Homepage();
+            homepageForm.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Search searchForm = new Search();
+            searchForm.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Korisnik korisnikForma = new Korisnik();
+            korisnikForma.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Odjavili ste se", "Poruka", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Application.Exit();
+        }
     }
 }

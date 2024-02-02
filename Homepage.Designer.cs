@@ -46,6 +46,7 @@
             this.button1home.Size = new System.Drawing.Size(75, 69);
             this.button1home.TabIndex = 0;
             this.button1home.UseVisualStyleBackColor = true;
+            this.button1home.Click += new System.EventHandler(this.button1home_Click);
             // 
             // button1
             // 
@@ -69,6 +70,7 @@
             this.button2.Size = new System.Drawing.Size(75, 69);
             this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -80,6 +82,7 @@
             this.button3.Size = new System.Drawing.Size(75, 69);
             this.button3.TabIndex = 3;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
