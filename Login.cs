@@ -18,6 +18,7 @@ namespace Netstream
     {
         private readonly DatabaseConnector databaseConnector;
         private string connectionString;
+        public Korisnik user;
 
         public Login()
         {
@@ -51,13 +52,16 @@ namespace Netstream
 
             if (isAuthenticated)
             {
-                Korisnik user = databaseConnector.GetUserByEmail(email);
+                user = databaseConnector.GetUserByEmail(email);
                 if (user != null)
                 {
                     MessageBox.Show($"Uspješno ste se prijavili! Dobrošli, {user.Email}!");
                     Homepage homepageForm = new Homepage();
+                    KorisnikForm korisnikForma = new KorisnikForm();
+                    korisnikForma.SetData(user.Ime, user.Prezime);
                     homepageForm.Show();
                     this.Hide();
+                    return;
                 }
                 else
                 {

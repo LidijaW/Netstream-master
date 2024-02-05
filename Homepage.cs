@@ -28,7 +28,7 @@ namespace Netstream
         private void button2_Click(object sender, EventArgs e)
         {
             
-            Korisnik korisnikForma = new Korisnik();
+            KorisnikForm korisnikForma = new KorisnikForm();
             korisnikForma.Show();
             this.Hide();
         }

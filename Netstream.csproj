@@ -124,11 +124,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Korisnik.cs">
+    <Compile Include="KorisnikForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Korisnik.Designer.cs">
-      <DependentUpon>Korisnik.cs</DependentUpon>
+    <Compile Include="KorisnikForm.Designer.cs">
+      <DependentUpon>KorisnikForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\DB\DatabaseConstants.cs" />
     <Compile Include="Properties\DB\NetstreamContext.cs" />
@@ -163,8 +163,8 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Korisnik.resx">
-      <DependentUpon>Korisnik.cs</DependentUpon>
+    <EmbeddedResource Include="KorisnikForm.resx">
+      <DependentUpon>KorisnikForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.cs</DependentUpon>

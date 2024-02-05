@@ -6,7 +6,7 @@ namespace Netstream.Properties.DB
 {
     public class NetstreamContext : DbContext
     {
-        public DbSet<Korisnik> Korisnici { get; set; }
+        //public DbSet<Korisnik> Korisnici { get; set; }
 
         public NetstreamContext() : base("name=NetstreamContext")
         {
