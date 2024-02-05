@@ -21,11 +21,11 @@ namespace Netstream.Properties.DB
                 try
                 {
                     connection.Open();
-                    Console.WriteLine("Successfully connected to the database!");
+                    Console.WriteLine("Uspješno povezivanje na databazu!");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
+                    Console.WriteLine($"Error prilikom povezivanja na databazu: {ex.Message}");
                     throw; 
                 }
             }
