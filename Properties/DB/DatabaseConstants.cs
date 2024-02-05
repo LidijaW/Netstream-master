@@ -10,7 +10,7 @@ namespace Netstream.Properties.DB
     {
         public const string Server = "localhost";
         public const string Database = "netstream";
-        public const string Uid = "luka";
-        public const string Pwd = "luka";
+        public const string Uid = "root";
+        public const string Pwd = "root";
     }
 }
