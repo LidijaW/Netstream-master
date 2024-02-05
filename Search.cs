@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Netstream
 {
@@ -23,7 +24,7 @@ namespace Netstream
 
         private void PopulateDataGridView()
         {
-            string query = "SELECT Naziv, Redatelj, Godina, Trajanje, Cijena FROM video";
+            string query = "SELECT Naziv, Redatelj, Godina, Trajanje, Cijena, Tip FROM video";
             DataTable dataTable = databaseConnector.ExecuteQuery(query);
             dataGridView1.DataSource = dataTable;
         }
