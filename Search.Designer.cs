@@ -38,7 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1home
@@ -46,9 +48,10 @@
             this.button1home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1home.BackgroundImage")));
             this.button1home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1home.ImageKey = "(none)";
-            this.button1home.Location = new System.Drawing.Point(12, 87);
+            this.button1home.Location = new System.Drawing.Point(16, 107);
+            this.button1home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1home.Name = "button1home";
-            this.button1home.Size = new System.Drawing.Size(75, 69);
+            this.button1home.Size = new System.Drawing.Size(100, 85);
             this.button1home.TabIndex = 0;
             this.button1home.UseVisualStyleBackColor = true;
             this.button1home.Click += new System.EventHandler(this.button1home_Click);
@@ -58,9 +61,10 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.ImageKey = "(none)";
-            this.button1.Location = new System.Drawing.Point(12, 201);
+            this.button1.Location = new System.Drawing.Point(16, 247);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 69);
+            this.button1.Size = new System.Drawing.Size(100, 85);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -70,9 +74,10 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.ImageKey = "(none)";
-            this.button2.Location = new System.Drawing.Point(12, 331);
+            this.button2.Location = new System.Drawing.Point(16, 407);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 69);
+            this.button2.Size = new System.Drawing.Size(100, 85);
             this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -82,9 +87,10 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.ImageKey = "(none)";
-            this.button3.Location = new System.Drawing.Point(12, 474);
+            this.button3.Location = new System.Drawing.Point(16, 583);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 69);
+            this.button3.Size = new System.Drawing.Size(100, 85);
             this.button3.TabIndex = 3;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -92,14 +98,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.checkedListBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.panel1.Location = new System.Drawing.Point(136, 25);
+            this.panel1.Location = new System.Drawing.Point(181, 31);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1194, 675);
+            this.panel1.Size = new System.Drawing.Size(1592, 831);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -117,9 +125,10 @@
             "Romcom",
             "Horror",
             "Kriminalističke"});
-            this.checkedListBox1.Location = new System.Drawing.Point(925, 30);
+            this.checkedListBox1.Location = new System.Drawing.Point(1233, 37);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(147, 174);
+            this.checkedListBox1.Size = new System.Drawing.Size(195, 193);
             this.checkedListBox1.TabIndex = 8;
             // 
             // label2
@@ -128,9 +137,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(829, 30);
+            this.label2.Location = new System.Drawing.Point(1105, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 24);
+            this.label2.Size = new System.Drawing.Size(95, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "Filter : ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -141,9 +151,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 30);
+            this.label1.Location = new System.Drawing.Point(40, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 24);
+            this.label1.Size = new System.Drawing.Size(237, 29);
             this.label1.TabIndex = 6;
             this.label1.Text = "Pretražite sadržaj : ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -151,30 +162,43 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(253, 20);
+            this.textBox1.Location = new System.Drawing.Point(337, 25);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(472, 38);
+            this.textBox1.Size = new System.Drawing.Size(628, 46);
             this.textBox1.TabIndex = 5;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(45, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1118, 380);
+            this.dataGridView1.TabIndex = 9;
             // 
             // Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1342, 712);
+            this.ClientSize = new System.Drawing.Size(1789, 876);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button1home);
             this.ForeColor = System.Drawing.Color.RosyBrown;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Search";
             this.Text = "Neastream SEARCH";
             this.Load += new System.EventHandler(this.Search_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,5 +214,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -1,20 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Netstream.Properties.DB;
+using Netstream.Properties.Model;
+using System;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Netstream
 {
     public partial class Search : Form
     {
+
+        private readonly DatabaseConnector databaseConnector;
+        private string connectionString;
+
         public Search()
         {
             InitializeComponent();
+            connectionString = $"Server={DatabaseConstants.Server};Database={DatabaseConstants.Database};Uid={DatabaseConstants.Uid};Pwd={DatabaseConstants.Pwd};";
+            databaseConnector = new DatabaseConnector(DatabaseConstants.Server, DatabaseConstants.Database, DatabaseConstants.Uid, DatabaseConstants.Pwd);
+            PopulateDataGridView();
+        }
+
+        private void PopulateDataGridView()
+        {
+            string query = "SELECT Naziv, Redatelj, Godina, Trajanje, Cijena FROM video";
+            DataTable dataTable = databaseConnector.ExecuteQuery(query);
+            dataGridView1.DataSource = dataTable;
         }
 
         private void label1_Click(object sender, EventArgs e)

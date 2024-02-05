@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using MySql.Data.MySqlClient;
 using Netstream.Properties.Model;
 
@@ -13,6 +14,7 @@ namespace Netstream.Properties.DB
         {
             connectionString = $"Server={server};Database={database};Uid={uid};Pwd={pwd};";
         }
+
 
         public void TestConnection()
         {
@@ -91,5 +93,30 @@ namespace Netstream.Properties.DB
 
             return user;
         }
+
+        public DataTable ExecuteQuery(string query)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error prilikom query: {ex.Message}");
+                }
+            }
+
+            return dataTable;
+        }
+
     }
 }
