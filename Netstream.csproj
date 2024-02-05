@@ -163,6 +163,12 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrailerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrailerForm.Designer.cs">
+      <DependentUpon>TrailerForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="KorisnikForm.resx">
       <DependentUpon>KorisnikForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +192,9 @@
     </Compile>
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrailerForm.resx">
+      <DependentUpon>TrailerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
