@@ -34,11 +34,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             this.button1home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1home.ImageKey = "(none)";
             this.button1home.Location = new System.Drawing.Point(16, 107);
-            this.button1home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1home.Margin = new System.Windows.Forms.Padding(4);
             this.button1home.Name = "button1home";
             this.button1home.Size = new System.Drawing.Size(100, 85);
             this.button1home.TabIndex = 0;
@@ -62,7 +63,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.ImageKey = "(none)";
             this.button1.Location = new System.Drawing.Point(16, 247);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 85);
             this.button1.TabIndex = 1;
@@ -75,7 +76,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.ImageKey = "(none)";
             this.button2.Location = new System.Drawing.Point(16, 407);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 85);
             this.button2.TabIndex = 2;
@@ -88,7 +89,7 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.ImageKey = "(none)";
             this.button3.Location = new System.Drawing.Point(16, 583);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 85);
             this.button3.TabIndex = 3;
@@ -98,6 +99,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.checkedListBox1);
             this.panel1.Controls.Add(this.label2);
@@ -105,11 +107,21 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.panel1.Location = new System.Drawing.Point(181, 31);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1592, 831);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(45, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1118, 380);
+            this.dataGridView1.TabIndex = 9;
             // 
             // checkedListBox1
             // 
@@ -126,7 +138,7 @@
             "Horror",
             "Kriminalističke"});
             this.checkedListBox1.Location = new System.Drawing.Point(1233, 37);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(195, 193);
             this.checkedListBox1.TabIndex = 8;
@@ -163,20 +175,23 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(337, 25);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(628, 46);
             this.textBox1.TabIndex = 5;
             // 
-            // dataGridView1
+            // button4
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1118, 380);
-            this.dataGridView1.TabIndex = 9;
+            this.button4.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button4.ForeColor = System.Drawing.Color.SeaShell;
+            this.button4.Location = new System.Drawing.Point(988, 26);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(99, 40);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.search);
             // 
             // Search
             // 
@@ -192,7 +207,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button1home);
             this.ForeColor = System.Drawing.Color.RosyBrown;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Search";
             this.Text = "Neastream SEARCH";
             this.Load += new System.EventHandler(this.Search_Load);
@@ -215,5 +230,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button4;
     }
 }

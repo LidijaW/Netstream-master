@@ -75,5 +75,21 @@ namespace Netstream
         {
 
         }
+
+        private void search(object sender, EventArgs e)
+        {
+            string searchText = textBox1.Text.Trim();
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                string query = $"SELECT Naziv, Redatelj, Godina, Trajanje, Cijena, Tip FROM video WHERE Naziv LIKE '%{searchText}%' OR Redatelj LIKE '%{searchText}%' OR Godina LIKE '%{searchText}%' OR Trajanje LIKE '%{searchText}%' OR Cijena LIKE '%{searchText}%' OR Tip LIKE '%{searchText}%'";
+                DataTable dataTable = databaseConnector.ExecuteQuery(query);
+                dataGridView1.DataSource = dataTable;
+            }
+            else
+            {
+                PopulateDataGridView();
+            }
+        }
     }
 }

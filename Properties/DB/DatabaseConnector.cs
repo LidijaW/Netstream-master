@@ -7,7 +7,7 @@ using Netstream.Properties.Model;
 namespace Netstream.Properties.DB
 {
     public class DatabaseConnector
-    {
+    { 
         private readonly string connectionString;
 
         public DatabaseConnector(string server, string database, string uid, string pwd)
