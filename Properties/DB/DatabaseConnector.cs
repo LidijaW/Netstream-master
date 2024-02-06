@@ -12,6 +12,7 @@ namespace Netstream.Properties.DB
 
         public DatabaseConnector(string server, string database, string uid, string pwd)
         {
+
             connectionString = $"Server={server};Database={database};Uid={uid};Pwd={pwd};";
         }
 

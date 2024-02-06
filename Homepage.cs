@@ -54,8 +54,7 @@ namespace Netstream
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string youtubeLink = "https://youtu.be/EXeTwQWrcwY?si=I90XXmtZvH8IFjJ5"; 
-            TrailerForm trailerForm = new TrailerForm(youtubeLink);
+            TrailerForm trailerForm = new TrailerForm();
             trailerForm.Show();
         }
     }
